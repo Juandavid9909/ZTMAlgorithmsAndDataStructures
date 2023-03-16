@@ -306,6 +306,8 @@ Aunque a grandes rasgos los arreglos dinámicos parecen mejores debemos tener en
 
 **Nota:** Siempre en las entrevistas técnicas ver los `strings` como `arreglos`.
 
+![Imagen arreglos](https://media.geeksforgeeks.org/wp-content/uploads/C-Arrays.jpg)
+
 #### Ventajas
 - Rápidas búsquedas.
 - Rápidas inserciones y eliminaciones en el último elemento.
@@ -349,6 +351,8 @@ const a = new Map();
 const b = new Set();
 ```
 
+![Imagen Hash Tables](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png)
+
 #### Ventajas (buena resolución de colisión necesaria)
 - Búsquedas rápidas.
 - Inserciones rápidas.
@@ -391,6 +395,8 @@ delete obj1;
 console.log("2", obj2); // No se borra
 ```
 
+![Imagen Linked Lists](https://res.cloudinary.com/practicaldev/image/fetch/s--QTk9XbRm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/kvnpce96zqdxu73hp6oe.png)
+
 #### Ventajas
 - Rápidas inserciones (si tenemos referencias directas como inicio y final).
 - Rápidas eliminaciones (si tenemos referencias directas como inicio y final).
@@ -410,6 +416,15 @@ console.log("2", obj2); // No se borra
 
 Las pilas o stacks es un tipo de estructura de data que son como platos, tenemos una pieza de información y luego ponemos otra encima, y así sucesivamente, y al tener toda esta información apilada sólo puedes ir extrayéndola desde la última a la primera, así es LIFO (Last In First Out). Son muy útiles cuando por ejemplo necesitas visualizar el último elemento agregado a la pila, otro ejemplo es el historial de tu navegador, y para regresar usas una pila y vas eliminando el primero cada vez que das atrás.
 
+![Imagen Stacks](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
+
+#### Ventajas
+- Rápidas operaciones.
+- Acceso rápido al primer/último elemento.
+- Ordenado.
+
+#### Desventajas
+- Búsqueda lenta.
 
 ## Queues
 
@@ -418,6 +433,8 @@ Las pilas o stacks es un tipo de estructura de data que son como platos, tenemos
 | Queue | $O(n)$ | $O(1)$ | $O(1)$ | $O(1)$ |
 
 Las colas o pilas son como una fila, y la primera persona en llegar entra, ese es su funcionamiento, así es FIFO (First In First Out). Otro ejemplo es Uber cuando una persona solicita un servicio de transporte y luego otra, le va a dar prioridad con la primera y una vez asigna el transporte para esta seguirá con la segunda y así sucesivamente. No es recomendable usar arreglos para crear colas, ya que al eliminar el primer elemento requerimos de actualizar los índices de todos los demás elementos.
+
+![Imagen Queues](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221213113312/Queue-Data-Structures.png)
 
 #### Ventajas
 - Rápidas operaciones.
@@ -432,6 +449,8 @@ Las colas o pilas son como una fila, y la primera persona en llegar entra, ese e
 
 Los árboles son nodos que pueden tener n cantidad de hijos, tienen un nodo raíz y cada uno de los hijos desciende de este nodo, la relación entre padre e hijo es unidireccional y hay nodos hojas que son aquellos que no tienen hijos. Un ejemplo de implementación de árboles es el HTML siendo la etiqueta `html` la raíz de todo.
 
+![Imagen Trees](https://algorithmtutor.com/images/tree.png)
+
 ### Binary Tree
 
 Cada nodo puede tener sólo 0, 1 o 2 nodos, y cada hijo sólo puede tener un padre.
@@ -440,6 +459,157 @@ Un árbol binario perfecto es parejo, es decir que todos los nodos hoja están l
 
 Un árbol binario completo es aquel donde todos los nodos tienen 0 o 2 hijos, pero no necesariamente es parejo.
 
+### Binary Search Tree
+
+Su máxima desventaja es que pueden quedar muy disparejos los niveles de los nodos ya que un lado puede quedar mucho más cargado de datos que el otro.
+
 | Estructura de dato | Lookup | Insert | Delete |
 |--|--|--|--|--|
 | Binary Search Tree | $O(log_n)$ | $O(log_n)$ | $O(log_n)$ |
+| Binary Search Tree muy cargado de un lado | $O(n)$ | $O(n)$ | $O(n)$ |
+
+![Imagen Binary Search Trees](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/1200px-Binary_search_tree.svg.png)
+
+#### Ventajas
+- Mejor que $O(n)$.
+- Ordenado.
+- Tamaño flexible.
+
+#### Desventajas
+- No hay operaciones constantes, es decir $O(1)$.
+
+### Balanced Search Trees
+
+Usualmente en producción querremos usar árboles de búsqueda balanceados, ya que si un árbol es desbalanceado como el de la sección anterior puede darse que las operaciones sean $O(n)$ y no $O(log_n)$, lo cual afectaría drásticamente nuestro rendimiento.
+
+#### AVL Trees
+Son árboles balanceados que validan en cada inserción/eliminación la longitud de ambos lados del árbol, y al tener una diferencia de longitud en ambos lados reestructurará el árbol dirigiendo el padre del elemento que estamos agregando como padre de su padre, a continuación una representación:
+```
+      15             
+     /  \            
+   6       50        
+  / \     /  \       
+4    7  23    71     
+ \              \    
+  5              77
+```
+
+Y al insertar el elemento 80 haría este proceso:
+```
+      15             
+     /  \            
+   6       50        
+  / \     /  \       
+4    7  23    71     
+ \              \    
+  5              77  
+                   \ 
+                   80
+```
+
+```
+      15           
+     /  \          
+   6       50      
+  / \     /  \     
+4    7  23     77  
+ \            /  \ 
+  5          71  80
+```
+
+![Imagen AVL Trees](https://www.programiz.com/sites/tutorial2program/files/avl-tree_update-bf.png)
+
+#### Red Black Trees
+Para estos árboles se indica un color para cada nodo, la raíz siempre debe ser de color negro y van a ir cambiando los colores por cada nivel.
+
+**Propiedades:**
+1.  El autoequilibrio se proporciona pintando cada nodo con dos colores (rojo o negro).
+2.  Cuando se modifica el árbol, se reorganiza y pinta un nuevo árbol.
+3.  Requiere 1 bit de información de color para cada nodo en el árbol.
+4.  Complejidad temporal: $O(log_n)$.
+
+**Restricciones:**
+1.  La raíz siempre es negra.
+2.  Todas las hojas NULL son negras y los dos hijos de un nodo rojo son negros.
+3.  Todo camino simple desde un nodo dado a cualquiera de sus hojas descendientes contiene el mismo número de  
+    nodos negros.
+4.  El camino desde la raíz hasta la hoja más lejana no es más del doble que el camino desde la raíz hasta la hoja más cercana.
+5.  Complejidad temporal: $O(log_n)$.
+
+ Por ejemplo, si tenemos el siguiente árbol:
+
+```
+  9(n)          
+   \          
+   10(r)
+```
+
+Y queremos agregar el nodo 11, se hará el siguiente proceso
+
+```
+  9(n)        
+   \          
+   10(r)
+     \          
+     11(r)
+```
+
+```
+  10(n)        
+ /  \          
+9(r) 11(r)
+```
+
+![Imagen Red Black Trees](https://cs.lmu.edu/~ray/images/redblacktree.png)
+
+#### AVL trees vs Red Black Trees
+Tanto los árboles rojo-negro como los árboles AVL son los árboles de búsqueda binarios equilibrados más utilizados y admiten la inserción, eliminación y búsqueda en tiempo $O(log_n)$ garantizado. Sin embargo, hay los siguientes puntos de comparación entre los dos:
+
+- Los árboles AVL tienen un equilibrio más rígido y, por lo tanto, proporcionan búsquedas más rápidas. Por lo tanto, para una tarea intensiva de búsqueda, use un árbol AVL.
+- Para tareas intensivas de inserción, utilice un árbol rojo-negro.
+- Los árboles AVL almacenan el factor de equilibrio en cada nodo. Esto toma $O(n)$ espacio extra. Sin embargo, si sabemos que las claves que se insertarán en el árbol siempre serán mayores que cero, podemos usar el bit de signo de las claves para almacenar la información de color de un árbol rojo-negro. Por lo tanto, en tales casos, el árbol rojo-negro no ocupa espacio adicional.
+
+Los árboles rojo-negros son de uso más general. Lo hacen relativamente bien en agregar, eliminar y buscar, pero los árboles AVL tienen búsquedas más rápidas a costa de agregar/eliminar más lento.
+
+### Binary Heaps
+
+#### Binary Heap
+Binary Heaps son árboles que van ordenados de mayor a menor o menor a mayor, es decir que la raíz es el valor más grande de todos o en el caso contrario el valor más pequeño, no tiene un orden en sí por nodo, sino que va priorizado por el valor dependiendo de si es Max Heap o Min heap.
+
+| Estructura de dato | Lookup | Insert | Delete |
+|--|--|--|--|--|
+| Binary Heap | $O(n)$ | $O(log_n)$ | $O(log_n)$ |
+
+```
+     101    
+   /    \   
+ 72      33 
+/  \    /  \
+2  45   5   1
+```
+
+Son muy buenos en operaciones de comparación cuando son valores cercanos, por ejemplo podríamos decir que queremos insertar personas que tienen un valor alrededor de 33, porque en ese caso simplemente podemos grabar esos items al inicio del árbol sin necesidad de buscar hasta lo más profundo de este mismo.
+
+Tener en cuenta que Memory Heap no es lo mismo que Binary Heap.
+
+##### Priority Queue
+Es el mismo comportamiento de las colas pero existe la prioridad, es decir que pueden llegar valores de últimos con mayor prioridad que serán operados primero, pero esto se construye con ayuda de árboles (Binary Heaps) por lo que el orden no será por los valores, será por su prioridad.
+
+![Imagen Binary Heaps](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221220165711/MinHeapAndMaxHeap1.png)
+
+#### Ventajas
+- Mejor que $O(n)$.
+- Priorizado.
+- Tamaño flexible.
+- Rápida inserción
+
+#### Desventajas
+- Búsquedas lentas.
+
+### Trie
+
+Es un árbol especializado en búsqueda, sobretodo con textos, y en algunos casos puede superar a los árboles de búsqueda binaria, tablas hash y otras estructuras de datos.
+
+Los Tries nos permiten saber si una palabra, o parte de una palabra existe en un string. La raíz en sí no tiene valor, y de ella se desprenden las letras, y cada letras tendrá las demás letras asociadas a la letra raíz de la palabra que estamos insertando. Con esta estructura de datos podemos hacer sugerencias ha que al buscar las palabras que está colocando el usuario podemos ir conectando con nuestros datos. Su complejidad de tiempo es $O(n)$ donde $n$ es la longitud de la palabra.
+
+![Imagen Tries](https://theoryofprogramming.files.wordpress.com/2015/01/trie12.jpg)
