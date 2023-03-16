@@ -464,7 +464,7 @@ Un árbol binario completo es aquel donde todos los nodos tienen 0 o 2 hijos, pe
 Su máxima desventaja es que pueden quedar muy disparejos los niveles de los nodos ya que un lado puede quedar mucho más cargado de datos que el otro.
 
 | Estructura de dato | Lookup | Insert | Delete |
-|--|--|--|--|--|
+|--|--|--|--|
 | Binary Search Tree | $O(log_n)$ | $O(log_n)$ | $O(log_n)$ |
 | Binary Search Tree muy cargado de un lado | $O(n)$ | $O(n)$ | $O(n)$ |
 
@@ -577,7 +577,7 @@ Los árboles rojo-negros son de uso más general. Lo hacen relativamente bien en
 Binary Heaps son árboles que van ordenados de mayor a menor o menor a mayor, es decir que la raíz es el valor más grande de todos o en el caso contrario el valor más pequeño, no tiene un orden en sí por nodo, sino que va priorizado por el valor dependiendo de si es Max Heap o Min heap.
 
 | Estructura de dato | Lookup | Insert | Delete |
-|--|--|--|--|--|
+|--|--|--|--|
 | Binary Heap | $O(n)$ | $O(log_n)$ | $O(log_n)$ |
 
 ```
