@@ -613,3 +613,61 @@ Es un árbol especializado en búsqueda, sobretodo con textos, y en algunos caso
 Los Tries nos permiten saber si una palabra, o parte de una palabra existe en un string. La raíz en sí no tiene valor, y de ella se desprenden las letras, y cada letras tendrá las demás letras asociadas a la letra raíz de la palabra que estamos insertando. Con esta estructura de datos podemos hacer sugerencias ha que al buscar las palabras que está colocando el usuario podemos ir conectando con nuestros datos. Su complejidad de tiempo es $O(n)$ donde $n$ es la longitud de la palabra.
 
 ![Imagen Tries](https://theoryofprogramming.files.wordpress.com/2015/01/trie12.jpg)
+
+
+## Graphs
+
+Los Grafos son unas de las estructuras de datos más usadas en ciencias de la computación. Es simplemente un conjunto de valores que están relacionados en pares, es como una pequeña red con distintos nodos/vértices y estos están conectados mediante sus aristas. Podemos usar los Grafos para representar redes en la World Wide Web, árboles genealógicos, o incluso para representar caminos, como hace Google Maps indicando las conexiones entre vértices para llegar de un punto A a un punto B.
+
+![Imagen Graphs](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/1200px-6n-graf.svg.png)
+
+Hay varios tipos de Grafos, los dirigidos y no dirigidos, los dirigidos indican en qué sentido va la conexión, los no dirigidos simplemente están conectados sin indicar si estos van en sentido de un nodo a otro.
+
+![Imagen Directed and Undirected Graphs](http://4.bp.blogspot.com/-gjVEx8DXip0/UnPt3mA039I/AAAAAAAAAFs/2mek_diAbi8/s1600/10.png)
+
+También están los Weighted y Unweighted Graphs, que son aquellos que tienen o no tienen un valor de costo en las aristas que conectan los distintos nodos.
+
+![Imagen Weighted and Unweighted Graphs](https://global-uploads.webflow.com/5d0dc87aac109e1ffdbe379c/60e19743a601cb5dff42ce85_jd.png)
+
+Y también están los Grafos cíclicos y acíclicos, estos son los que tienen o no conexiones que permiten ir en círculos alrededor de los nodos como se representa en la imagen.
+
+![Imagen Cyclic and Acyclic Graphs](https://www.codingeek.com/wp-content/uploads/2016/11/cyclic.png)
+
+### ¿Cómo representar Grafos en código?
+
+Supongamos que queremos construir el siguiente Grafo:
+```
+  2 - 0     
+ / \          
+1 - 3
+```
+
+Podríamos hacer lo siguiente en JavaScript:
+```
+// Edge List
+const graph = [[0, 2], [2, 3], [2, 1], [1, 3]];
+
+// Adjacent List (el index del arreglo es el valor del actual nodo del grafo)
+const graph = [[2], [2, 3], [0, 1, 3], [1, 2]];
+
+// Adjacent Matrix (el index del arreglo es el valor del actual nodo del grafo y los 0 significa que no hay conexión, el 1 que sí la hay)
+const graph = [
+	[0, 0, 1, 0],
+	[0, 0, 1, 1],
+	[1, 1, 0, 1],
+	[0, 1, 1, 0]
+];
+// O también
+const graph = {
+	0: [0, 0, 1, 0],
+	1: [0, 0, 1, 1],
+	2: [1, 1, 0, 1],
+	3: [0, 1, 1, 0]
+};
+```
+
+#### Ventajas
+- Al ser relacionado nos permite conectar elementos unos con otros fácilmente.
+
+#### Desventajas
+- Escalamiento difícil.
