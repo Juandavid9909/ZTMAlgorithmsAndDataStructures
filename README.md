@@ -671,3 +671,14 @@ const graph = {
 
 #### Desventajas
 - Escalamiento difícil.
+
+
+# Algoritmos
+
+## Recursividad
+
+Es una función que se llama a sí misma para solucionar un problema, es importante definir los parámetros para detener la función, ya que si no lo hacemos la función seguirá ejecutándose infinitamente. Para crear una función recursiva se deben tener en cuenta los siguientes aspectos:
+
+- Identificar la base, es decir cuándo parar la ejecución.
+- Identificar el llamado recursivo, para garantizar que el algoritmo sea correcto.
+- Usar la palabra reservada `return` siempre que sea necesario, ya que sólo así podremos extraer el valor que estamos calculando en los llamados, por ende debemos hacer un `return` en el caso de parada y también en cada llamado que se hace a la función nuevamente por lo que generalmente son 2 `return`.
