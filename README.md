@@ -682,3 +682,103 @@ Es una función que se llama a sí misma para solucionar un problema, es importa
 - Identificar la base, es decir cuándo parar la ejecución.
 - Identificar el llamado recursivo, para garantizar que el algoritmo sea correcto.
 - Usar la palabra reservada `return` siempre que sea necesario, ya que sólo así podremos extraer el valor que estamos calculando en los llamados, por ende debemos hacer un `return` en el caso de parada y también en cada llamado que se hace a la función nuevamente por lo que generalmente son 2 `return`.
+
+### Recursividad vs programación iterativa
+
+Cualquier cosa que hagamos con recursividad puede ser implementada con programación iterativa (ciclos).
+
+Con recursividad tendremos problemas de rendimiento ya que pueden tender a tener complejidad espacial de $O(2^n)$ pero también nos permite tener un código más legible eliminando los ciclos que pueden confundirnos.
+
+A pesar de que la recursividad es una herramienta potente que nos permite hacer implementaciones fácilmente no siempre es la mejor opción.
+
+#### Ventajas
+- DRY (Don't repeat yourself).
+- Legible, es sencillo y normalmente son bloques de código pequeños.
+
+#### Desventajas
+- Amplia pila, podremos obtener problemas de Stack Overflow ya que a medida que crece el valor de entrada la ejecución será mucho más lenta.
+- Recursividad y complejidad espacial no se llevan muy bien juntos.
+
+A pesar de la gran desventaja que tiene recursividad, algunos lenguajes de programación como JavaScript han implementado algo llamado Tail Code Optimization, el cual viene en ES6 y nos permite hacer llamados recursivos sin que se incremente innecesariamente la pila de ejecución.
+
+### ¿Cuándo utilizar recursividad?
+
+En algunos casos, como los algoritmos de BFS y DSF (Searching) la recursividad es muy útil, incluso más eficiente que la programación iterativa, para saber si programar con recursividad es la mejor opción podemos seguir las siguientes recomendaciones:
+
+#### Dividir y conquistar usando recursividad
+Cada vez que usemos un árbol o convirtamos algo en un árbol, considerar recursión:
+
+1. Dividir en un número de subproblemas que son pequeñas instancias del mismo problema (divide and conquer).
+2. Cada instancia del subproblema es idéntica naturalmente.
+3. Las soluciones de cada subproblema pueden ser combinadas para resolver problemas a la mano.
+
+
+## Ordenamiento
+
+Los problemas de ordenamiento y búsqueda son de los más importantes en el mundo de la programación, y hay numerosos algoritmos que cumplen con estas funciones. Algunos son más eficientes que otros dependiendo del tamaño de entrada, y aunque los lenguajes de programación tienen su propia función `sort()` estas no son las más óptimas. A continuación un ejemplo de por qué la función `.sort()` de JavaScript no siempre es la más óptima:
+
+```
+const letters = ["a", "d", "z", "e", "r", "b"];
+const basket = [2, 65, 34, 2, 1, 7, 8];
+const spanish = ["único", "árbol", "cosas", "fútbol"];
+
+letters.sort(); // ["a", "b", "d", "e", "r", "z"]
+basket.sort(); // [1, 2, 2, 34, 65, 7, 8]
+basket.sort((a, b) => {
+	return a - b;
+}); // [1, 2, 2, 7, 8, 34, 65]
+spanish.sort(); // ["cosas", "fútbol", "árbol", "único"]
+spanish.sort((a, b) => {
+	return a.localeCompare(b);
+}); // ["árbol", "cosas", "fútbol", "único"]
+```
+
+Es por esto que para garantizar que el `.sort()` funcione correctamente debemos crear una función para validar los valores, y al tener que alterar la función nativa no tendremos siempre la misma complejidad de tiempo y espacial.
+
+### Bubble Sort
+
+Básicamente verifica posición por posición 2 elementos y los va cambiando si el de la izquierda es menor que el de la derecha hasta que el arreglo queda ordenado completamente. A continuación la tabla con sus características:
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Bubble Sort | $\Omega(n)$ | $\Theta(n^2)$ | $O(n^2)$ | $O(1)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Bubble Sort](http://www.computersciencebytes.com/wp-content/uploads/2016/10/bubble_sort.png)
+
+### Selection Sort
+
+Es muy parecido al Bubble Sort, con la diferencia de que aquí no se van cambiando todos directamente, se usan 2 ciclos para ir colocando los valores menores al inicio del arreglo. A continuación la tabla con sus características:
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Selection Sort | $\Omega(n^2)$ | $\Theta(n^2)$ | $O(n^2)$ | $O(1)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Selection Sort](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
+
+### Insertion Sort
+
+No es el más eficiente pero hay casos en los que es bastante rápido, este algoritmo es útil cuando estás bastante seguro de que los datos de entrada están ordenados (o casi). Su funcionamiento consiste en recorrer los datos de entrada posición por posición, y a medida que valida cada valor en cada posición crea un subarreglo ordenado, lo que nos permite ir agregando los valores en las posiciones correctas. A continuación la tabla con sus características:
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Insertion Sort | $\Omega(n)$ | $\Theta(n^2)$ | $O(n^2)$ | $O(1)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Insertion Sort](https://static.packt-cdn.com/products/9781785888731/graphics/image_13_008.jpg)
+
+### Merge Sort
+
+Está basado en dividir y conquistar, toma una entrada muy grande y la divide en pequeños problemas hasta que quedan entradas de longitud 1 y ahí empieza a organizar correctamente.
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Merge Sort | $\Omega(n*log_n)$ | $\Theta(n*log_n)$ | $O(n*log_n)$ | $O(n)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Merge Sort](https://www.programiz.com/sites/tutorial2program/files/merge-sort-example_0.png)
