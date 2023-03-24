@@ -747,6 +747,10 @@ Y también una imagen para entender el proceso paso a paso:
 
 ![Imagen Bubble Sort](http://www.computersciencebytes.com/wp-content/uploads/2016/10/bubble_sort.png)
 
+En general nunca se usa debido, sólo para fines educativos, pero en proyectos reales es mejor ver otras opciones.
+
+![Imagen Bubble Sort](https://i.stack.imgur.com/XNbE0.gif)
+
 ### Selection Sort
 
 Es muy parecido al Bubble Sort, con la diferencia de que aquí no se van cambiando todos directamente, se usan 2 ciclos para ir colocando los valores menores al inicio del arreglo. A continuación la tabla con sus características:
@@ -758,6 +762,10 @@ Es muy parecido al Bubble Sort, con la diferencia de que aquí no se van cambian
 Y también una imagen para entender el proceso paso a paso:
 
 ![Imagen Selection Sort](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
+
+Lo mismo que Bubble Sort, no es usado, sólo para fines educativos.
+
+![Imagen Selection Sort](https://cdn.devdojo.com/images/september2021/selectionsortgif_madebyme.gif)
 
 ### Insertion Sort
 
@@ -771,9 +779,13 @@ Y también una imagen para entender el proceso paso a paso:
 
 ![Imagen Insertion Sort](https://static.packt-cdn.com/products/9781785888731/graphics/image_13_008.jpg)
 
+Se recomienda usar Insertion Sort cuando el tamaño de la entrada es pequeño o cuando estamos seguros de que el arreglo está (o casi) ordenado.
+
+![Imagen Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif)
+
 ### Merge Sort
 
-Está basado en dividir y conquistar, toma una entrada muy grande y la divide en pequeños problemas hasta que quedan entradas de longitud 1 y ahí empieza a organizar correctamente.
+Está basado en dividir y conquistar, toma una entrada muy grande y la divide en pequeños problemas hasta que quedan entradas de longitud 1 y ahí empieza a organizar correctamente. A continuación la tabla con sus características:
 
 | Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
 |--|--|--|--|--|
@@ -782,3 +794,151 @@ Está basado en dividir y conquistar, toma una entrada muy grande y la divide en
 Y también una imagen para entender el proceso paso a paso:
 
 ![Imagen Merge Sort](https://www.programiz.com/sites/tutorial2program/files/merge-sort-example_0.png)
+
+Es muy bueno porque usa dividir y conquistar, además de su complejidad de tiempo $O(n*log_n)$. Es muy rápido y aunque sea el peor caso siempre va a ser la misma complejidad de tiempo por lo que cuando es incierto saber o sabemos que el orden de la entrada va a ser muy desordenado es muy recomendable usarlo. Sin embargo, por su complejidad espacial vamos a requerir de muchos recursos, ya que en el peor de los casos será $O(n)$.
+
+![Imagen Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif?20151222172210)
+
+### Quick Sort
+
+Al igual que Merge Sort está basado en dividir y conquistar, la diferencia es que este usa un pivote que permite ir organizando un elemento en el arreglo, es decir que una vez verificado este elemento con todos los demás sabremos que su posición final (dejando a la izquierda los valores menores y a la derecha los mayores) va a ser correcta, lo que nos permite luego hacer el mismo proceso para los subarreglos que salen si dividimos el arreglo inicial en la posición donde tenemos nuestro elemento ya organizado. A continuación la tabla con sus características:
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Quick Sort | $\Omega(n*log_n)$ | $\Theta(n*log_n)$ | $O(n^2)$ | $O(log_n)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Quick Sort](https://favtutor.com/resources/images/uploads/mceu_46432632011643441346270.png)
+
+Es mejor que Merge Sort en el caso promedio y en complejidad espacial, su desventaja es el peor caso, por lo que si no asignamos correctamente el pivote para realizar las operaciones es muy posible que nuestro proceso de ordenamiento sea muy muy lento.
+
+![Imagen Quick Sort](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
+
+A pesar de que el mejor resultado que obtenemos por ordenamiento con cada uno de estos en el peor de los casos es $O(n*log_n)$ hay 2 opciones para mejorar esta complejidad de tiempo, basándose en el ordenamiento sin hacer comparaciones, dichos algoritmos son Counting Sort y Radix Sort, pero cabe resaltar que estos algoritmos sólo funcionan con valores numéricos, específicamente enteros.
+
+### Heap Sort
+
+Este algoritmo consiste en almacenar todos los elementos del vector a ordenar en un heap, y luego extraer el nodo que queda como nodo raíz del montículo (cima) en sucesivas iteraciones obteniendo el conjunto ordenado. Basa su funcionamiento en una propiedad de los montículos, por la cual, la cima contiene siempre el menor elemento (o el mayor, según se haya definido el montículo) de todos los almacenados en él. El algoritmo, después de cada extracción, recoloca en el nodo raíz o cima, la última hoja por la derecha del último nivel. Lo cual destruye la propiedad heap del árbol. Pero, a continuación realiza un proceso de "descenso" del número insertado de forma que se elige a cada movimiento el mayor de sus dos hijos, con el que se intercambia. Este intercambio, realizado sucesivamente "hunde" el nodo en el árbol restaurando la propiedad montículo del árbol y dejando paso a la siguiente extracción del nodo raíz. A continuación la tabla con sus características:
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Heap Sort | $\Omega(n*log_n)$ | $\Theta(n*log_n)$ | $O(n*log_n)$ | $O(1)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Merge Sort](https://upload.wikimedia.org/wikipedia/commons/f/fe/Heap_sort_example.gif)
+
+### Radix Sort
+
+Es un algoritmo que permite ordenar números enteros sin hacer comparaciones, para esto ordena los números enteros procesando sus dígitos de forma individual, es decir que hace algo parecido a lo que se puede ver a continuación:
+
+```
+25 57 48 37 12 92 86 33
+
+// Asignamos los elementos en colas basadas en el dígito menos significativo de cada uno de ellos.
+0:  
+1:  
+2:12 92  
+3:33  
+4:  
+5:25  
+6:86  
+7:57 37  
+8:48  
+9:
+
+Después de la primera pasada, la ordenación queda:
+12 92 33 25 86 57 37 48
+Colas basadas en el dígito más significativo.
+0:  
+1:12  
+2:25  
+3:33 37  
+4:48  
+5:57  
+6:  
+7:  
+8:86  
+9:92
+
+Lista ordenada:
+12 25 33 37 48 57 86 92
+```
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Radix Sort | $\Omega(nk)$ | $\Theta(nk)$ | $O(nk)$ | $O(n + k)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Quick Sort](https://ds055uzetaobb.cloudfront.net/brioche/uploads/IEZs8xJML3-radixsort_ed.png?width=1200)
+
+### Counting Sort
+
+Es un algoritmo de ordenamiento en el que se cuenta el número de elementos de cada clase para luego ordenarlos. Solo puede ser utilizado por tanto para ordenar elementos que sean contables (como los números enteros en un determinado intervalo, pero no los números reales, por ejemplo).
+
+El primer paso consiste en averiguar cuál es el intervalo dentro del que están los datos a ordenar (valores mínimo y máximo). Después se crea un vector de números enteros con tantos elementos como valores haya en el intervalo [_mínimo_, _máximo_], y a cada elemento se le da el valor 0 (0 apariciones). Tras esto se recorren todos los elementos a ordenar y se cuenta el número de apariciones de cada elemento (usando el vector que hemos creado). Por último, basta con recorrer este vector para tener todos los elementos ordenados. El proceso se puede ver a continuación:
+
+```
+Lista sin ordenar: 2, 5, 3, 2, 7, 5, 3, 2, 2
+
+Para ordenarla con este algoritmo, seguimos estos pasos:
+- Buscar el mínimo y el máximo
+ Mínimo = 2
+ Máximo = 7
+
+- Crear el vector auxiliar
+ vaux = nuevo vector(2,7) de enteros
+
+- Recorrer la lista de números y contar elementos, debe fijarse como el valor en la lista de entrada se usa como índice en el vector auxiliar
+ Al final, 
+   vAux(2) = 4  porque aparece 4 veces en la lista
+   vAux(3) = 2  porque aparece 2 veces en la lista
+   vAux(4) = 0  porque no aparece en la lista ninguna vez
+   vAux(5) = 2  porque aparece 2 veces en la lista
+   vAux(6) = 0  porque no aparece en la lista ninguna vez
+   vAux(7) = 1  porque aparece 1 vez en la lista 
+
+- Recorriendo el vector auxiliar obtenemos la lista de números ordenada
+   listaValores(0) = 2  El valor 2, se repite 4 veces.
+   listaValores(1) = 2
+   listaValores(2) = 2
+   listaValores(3) = 2
+   -
+   listaValores(4) = 3  El valor 3 se repite 2 veces
+   listaValores(5) = 3
+   -
+   listaValores(6) = 5  El valor 5 se repite 2 veces
+   listaValores(7) = 5  
+   -
+   listaValores(8) = 7  El valor 7 solo aparece 1 vez
+   -
+   -
+   Lista ordenada = 2, 2, 2, 2, 3, 3, 5, 5, 7
+```
+
+| Algoritmo | Mejor | Promedio | Peor | Peor complejidad espacial |
+|--|--|--|--|--|
+| Counting Sort | $\Omega(n+k)$ | $\Theta(n+k)$ | $O(n+k)$ | $O(k)$ |
+
+Y también una imagen para entender el proceso paso a paso:
+
+![Imagen Quick Sort](https://d18l82el6cdm1i.cloudfront.net/uploads/hrUDdYC7OH-countingsort.gif)
+
+
+## Búsqueda
+
+La búsqueda es algo que realizamos mucho en las computadoras. Buscamos por archivos, control F para buscar, en Google, YouTube, Twitter, etc.
+
+### Búsqueda Lineal
+
+Búsqueda Lineal es un método para encontrar un valor en un conjunto de datos verificando todos los elementos en el peor caso, por lo que su complejidad de tiempo es $O(n)$.
+
+![Imagen Linear Search](https://i.pinimg.com/originals/5a/9a/42/5a9a4231aa995d2bec0781c6972f6032.gif)
+
+### Búsqueda Binaria
+
+Búsqueda Binaria nos permite buscar un elemento en un arreglo ordenado, es necesario que esté ordenado para garantizar el correcto funcionamiento del algoritmo. Consiste en ir buscando por mitades (dividir y conquistar) hasta encontrar el elemento, lo que permite tener una complejidad de tiempo de $O(log_n)$. El arreglo al final se convierte en un árbol de búsqueda binaria.
+
+![Imagen Binary Search](https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif)
