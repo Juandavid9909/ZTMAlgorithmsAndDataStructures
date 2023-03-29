@@ -942,3 +942,86 @@ Búsqueda Lineal es un método para encontrar un valor en un conjunto de datos v
 Búsqueda Binaria nos permite buscar un elemento en un arreglo ordenado, es necesario que esté ordenado para garantizar el correcto funcionamiento del algoritmo. Consiste en ir buscando por mitades (dividir y conquistar) hasta encontrar el elemento, lo que permite tener una complejidad de tiempo de $O(log_n)$. El arreglo al final se convierte en un árbol de búsqueda binaria.
 
 ![Imagen Binary Search](https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif)
+
+## Tree y Graph Traversal
+
+Para hacer esto tendremos 2 opciones (para ambas estructuras de datos), esas son Breadth First Search (BFS) y Depth First Search (DFS), y su complejidad de tiempo es $O(n)$ ya que requerimos ingresar a cada nodo.
+
+### BFS (búsqueda por amplitud)
+
+Este algoritmo realiza una comparación de los elementos por cada nivel, es decir primero el inicio del árbol/grafo, luego el segundo nivel, después el tercero, etc.
+
+Este algoritmo usa memoria adicional porque es necesario tener en cuenta los nodos hijos de todos los nodos que estamos verificando.
+
+#### Ventajas
+- Podremos encontrar el camino más corto.
+- Nodos cercanos primero.
+
+#### Desventajas
+- Requiere más memoria.
+
+### DFS (búsqueda por profundidad)
+
+Este algoritmo se basa en hacer una búsqueda por profundidad, es decir que siempre va por todo el lado izquierdo y va pasando progresivamente al lado derecho hasta cubrir todo el árbol/grafo.
+
+DFS puede ser implementado de 3 formas, estas son `PreOrder, InOrder, PostOrder`. InOrder retorna el arreglo ordenado, PreOrder devuelve un arreglo con los nodos del árbol en el orden en el que fueron ingresados, esto nos sirve para recrear un árbol, y por último PostOrder retorna primero los nodos hoja de la izquierda, luego su padre, hace lo mismo para el lado derecho y así sucesivamente hasta llegar al nodo raíz.
+
+#### Ventajas
+- Menos memoria.
+- Podremos responder la pregunta ¿existe el camino?
+
+#### Desventajas
+- Puede volverse lento.
+
+A continuación una imagen donde se puede ver cómo funcionan ambos:
+
+![Imagen BFS y DFS](https://iq.opengenus.org/content/images/2020/05/dfs-vs-bfs.gif)
+
+## Camino más corto
+
+Hay 2 algoritmos muy populares que nos permiten encontrar el camino más corto en un grafo, estos son `Dijkstra` y `Bellman-Ford`. Estos son útiles ya que el algoritmo DFS no tiene en cuenta los costos de las aristas para llegar del nodo A al nodo B.
+
+Estos 2 algoritmos nos permiten encontrar el camino de un grafo entre 2 nodos cuyas aristas tienen un valor, un ejemplo es Google Maps, ya que puede tener en cuenta el tiempo que tarda un vehículo en una calle, qué tanto tráfico hay, etc.
+
+A continuación una representación del algoritmo `Dijkstra`:
+
+![Imagen Dijkstra](https://i.makeagif.com/media/4-06-2019/BlbFEM.gif)
+
+Y una imagen del algoritmo `Bellman-Ford`:
+
+![Imagen Bellman-Ford](https://upload.wikimedia.org/wikipedia/commons/7/77/Bellman%E2%80%93Ford_algorithm_example.gif)
+
+El algoritmo de `Bellman-Ford` es más efectivo para encontrar el camino corto que el algoritmo `Dijkstra`, ya que este puede tener en cuenta aristas con costo negativo, mientras que el último algoritmo no está diseñado para tener en cuenta estos casos. Sin embargo, el algoritmo `Bellman-Ford` toma más tiempo ejecutándose si hablamos de complejidad, y no es el algoritmo más eficiente, su complejidad de tiempo en el peor caso es de $O(n^2)$, mientras que el algoritmo `Dijkstra` es un poco más rápido y eficiente que este.
+
+## ¿Qué tener en cuenta para hacer búsquedas en arreglos y strings?
+
+Ya teniendo todo esto en cuenta podremos hacer las siguientes conclusiones:
+
+- Si el arreglo está ordenado podremos hacer uso del dividir y conquistar, específicamente de la búsqueda binaria, ya que tendríamos una complejidad de tiempo $O(log_n)$
+- Si no está ordenado y ordenándolo no mejoraría el rendimiento podríamos hacer uso de la búsqueda lineal, cuya complejidad de tiempo es $O(n)$.
+- Si es un string podríamos hacer uso de la estructura de dato Trie para ver si con esto podemos optimizar el rendimiento.2
+
+
+# Programación dinámica
+
+Es una técnica de optimización que usa caché para optimizar algunos algoritmos (especialmente los recursivos), la técnica principal es llamada Memoization.
+
+## Memoization
+
+Para entender qué es Memoization es importante tener claro lo que significa Caching, y simplemente es una forma de guardar valores a los que podrás acceder después, Memoization es simplemente esto, una forma de guardar información en nuestro código.
+
+Un claro ejemplo es cuando programamos una función recursiva que devuelva la secuencia de Fibonacci, ya que al ejecutar el fibonacci de 5 se calculará múltiples veces el fibonacci de 2 y 3, con Memoization podemos guardar esta información para que nuestro algoritmo no tenga que hacer el cálculo múltiples veces, sino que lo haga una vez y guarde esta información para poder seguir accediendo a esta sin necesidad de calcular nuevamente los valores.
+
+![Imagen árbol fibonacci](https://i.stack.imgur.com/2dxLl.png)
+
+En conclusión la programación dinámica es como una combinación de dividir y conquistar y Memoization.
+
+## ¿Cómo saber si un problema puede ser resuelto con programación dinámica?
+
+Hay 5 pasos que podremos tener en cuenta para tomar esta decisión, a continuación la lista:
+
+- Puede ser dividido en subproblemas.
+- Solución recursiva.
+- ¿Hay subproblemas repetidos?
+- Usar Memoization en subproblemas.
+- Nos permite solicitar aumentos porque ahorraremos muchos cálculos.
