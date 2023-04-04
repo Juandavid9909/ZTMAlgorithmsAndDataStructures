@@ -1025,3 +1025,125 @@ Hay 5 pasos que podremos tener en cuenta para tomar esta decisión, a continuaci
 - ¿Hay subproblemas repetidos?
 - Usar Memoization en subproblemas.
 - Nos permite solicitar aumentos porque ahorraremos muchos cálculos.
+
+
+# Entrevistas no técnicas
+
+Hay algunas cosas a tener en cuenta sumamente importantes en las entrevistas no técnicas, muchas veces nos puede ganas la ansiedad, pero debemos tener en cuenta lo siguiente:
+
+## Mentalidad
+
+No es la última chance, no se trata de pasar o fallar, hay que tomarlo todo como una experiencia de aprendizaje, para entender qué tan bueno es mi código, qué tan bueno soy en entrevistas, qué tan bien me expreso ante el entrevistador. Debemos llegar a la entrevista con mucha energía, estando felices y emocionados de estar ahí. Hay 3 preguntas que siempre estarán en las entrevistas:
+
+- ¿Puedes hacer el trabajo?
+- ¿Pueden trabajar conmigo?
+- ¿Mejorarás en el trabajo?
+
+Para estar preparado para la entrevista es bueno tener de 2 a 4 historias preparadas, y esto debe demostrarle al entrevistador ver que tengo estas 4 habilidades que ellos buscan:
+
+- **Técnico:** Una historia que demuestra que soy muy bueno técnicamente hablando y que conozco sobre ellos.
+- **Éxito:** Indicar que soy alguien exitoso, un ejemplo sería que fui ascendido a un puesto Senior.
+- **Liderazgo:** Debo demostrar que tengo habilidades de liderazgo.
+- **Retos:** Ellos quieren saber qué problemas he tenido en el pasado en proyectos y cómo logré solucionarlos.
+
+## Hablar sobre mí
+
+Debo redirigir la conversación cuando me hagan la pregunta hacia donde quiero que me hagan preguntas. No dar una respuesta muy extensa ni muy corta.
+
+- Mis señales de éxito.
+- Mencionar cosas que quiero que ellos me pregunten.
+- Habilidades que deberían ser relevantes para el trabajo.
+
+Debo demostrar que serán muy afortunados de tenerme, y también cómo todo lo que he hecho en el pasado hace que este trabajo sea perfecto para mí.
+
+## ¿Por qué nosotros?
+
+Debo demostrarle al entrevistador que de verdad me gusta la empresa, que admiro su forma de trabajar y que no estoy buscando un trabajo temporal, al contrario busco un trabajo a largo plazo donde pueda crecer profesionalmente.
+
+- Hacerles notar que quieres crecer.
+- Demostrar por qué soy la mejor opción.
+
+## ¿Por qué pienso dejar mi trabajo?
+
+No ser negativo, no hablar sobre mis compañeros de trabajo, mis jefes, etc. Debo ser tan positivo como sea posible, por ejemplo puedo decir que quiero nuevos retos, aprender cosas nuevas para crecer profesionalmente, trabajar con personas muy inteligentes como las que tiene la empresa contratadas.
+
+## Cuéntame sobre algún problema que hayas tenido y cómo lo solucionaste
+
+Cuando nos hagan preguntas debemos iniciar dando contexto de cómo era el proyecto, el problema que tuve, y luego la solución que apliqué para este problema.
+
+- Tener esta respuesta bien preparada.
+- Tener métricas y números, por ejemplo que mejoré el rendimiento de un sitio web o incrementé el número de usuarios, no usar porcentajes, números exactos.
+- Escalamiento, rendimiento y seguridad, puedo usar al menos alguna de estas para indicar cómo mejoré el proyecto en dicho aspecto.
+- Mostrar por qué soy diferente.
+- Relacionar todo lo que digo con el trabajo al que estoy aplicando.
+
+## ¿Cuál es mi mayor debilidad?
+
+Respuesta real y mostrar cómo lo mejoro. Por ejemplo puedo decir algo como "a veces cuando tengo un problema empiezo a escribir código por montones sin pensar en realmente qué estoy solucionando, por lo que en determinado punto me doy cuenta de esto y me detengo para analizar detenidamente el problema".
+
+## ¿Tengo alguna pregunta para el entrevistador?
+
+- Enfocarme en el entrevistador, no en mí.
+- Mencionar algo que ellos hayan dicho.
+
+Por ejemplo "¿cuál fue el mayor error que cometiste en tu primer mes trabajando aquí y cómo lo solucionaste?", o "¿dónde crees que estará la compañía en 3 años? Quiero estar aquí por un tiempo, pero tú ya trabajas aquí y tienes más conocimiento sobre la compañía, y me gustaría ver hacia dónde se dirige la empresa", o "¿por qué decidiste trabajar en la compañía?", y otro ejemplo es "¿has notado que tus habilidades han mejorado el año pasado?".
+
+Un recurso interesante es el siguiente link de GitHub que contiene preguntas que puedo realizarle al entrevistador: [Reverse Interview](https://github.com/viraptor/reverse-interview).
+
+## Arma secreta
+
+- Simplicidad por encima de complejidad, es decir que hablar en términos simples, muchas veces contamos cosas que hemos solucionado en términos tan técnicos que al final sólo lo entendemos nosotros.
+- La optimización prematura es la raíz de todos los males, siempre queremos optimizar nuestro código, el rendimiento pero debemos trabajar con nuestro tiempo limitado, debo demostrarle al entrevistador que soy el tipo de persona que entiende el valor del tiempo, recursos y dinero y cómo estoy preparado para trabajar en cosas donde estas características importan sin necesidad de obsesionarnos con esto.
+- Objetivo general, no en pequeñeces, tener en cuenta todo, no sólo enforcarnos en una cosa, por ejemplo tenemos una semana para entregar nuestra parte del proyecto pero nos enfocamos tanto en hacer buen código que nos olvidamos del límite de tiempo, y aunque no sea algo del todo malo debemos entender las consecuencias empresariales de lo que hacemos.
+- No quejarnos sobre el cliente/código/etc.
+- Sin egos.
+
+## Después de la entrevista
+
+Primero agradecer al reclutador o entrevistador y demostrar que estoy emocionado, debemos iniciar y finalizar la entrevista con una buena impresión. Si puedo, solicitar comentarios específicos sobre el desempeño de mi entrevista.
+
+- No usar mucho la palabra "yo".
+- Hablar sobre el entrevistador.
+- Expresar cómo soy el candidato ideal.
+- No presumir.
+- Si no logré resolver algo puedo enviar un correo luego de la entrevista indicando que encontré información sobre el problema y hallé una solución al respecto y hablar un poco sobre ella.
+
+
+# Oferta y negociación
+
+## Manejo del rechazo
+
+Los rechazos nunca son señales de no éxito, 99 rechazos y una oferta son mejores que 2 rechazos y ninguna oferta. Si somos rechazados, mirar si podemos extraer información del desempeño de la compañía. Decirles que estoy constantemente buscando mejorar y que me gustaría algún resumen de mi desempeño. Después de esto podría preguntarles cuándo estaría bien aplicar nuevamente si sigo interesado.
+
+## Negociando
+
+Si me preguntan cuál es mi expectativa salarial puedo decir algo como "bueno...en X lugar el salario promedio de un ingeniero de software es de Y, así que podríamos comenzar en este punto".
+
+- No finalizar la conversación.
+- Dar razones para todo, por ejemplo si en determinado tiempo en la compañía nos dicen "estamos dispuestos a ofrecerte X anualmente" podríamos responder algo como "gracias por esta oferta tan generosa, y estoy muy emocionado de empezar a trabajar con ustedes, sin embargo, esta es una gran decisión familiar y estoy buscando  trabajar con una compañía por muchos años, así que me gustaría discutir esto con mis padres/esposa, etc y tener un tiempo para asegurarnos de que eso es algo con lo que todos no sentimos cómodos".
+- Siempre negociar.
+- Ser positivo.
+- Tener apuestas, es decir tener un as bajo la manga si no hay riesgo y estoy seguro de que firmarán mi contrato o aceptarán el salario, sino se preguntarán qué incentivo tendrían para ofrecerme más si saben que estoy desesperado y es el único trabajo que puedo tomar. Debo demostrar que tengo múltiples ofertas.
+
+## Manejo de una oferta
+
+- Recordar no finalizar la conversación.
+- Ser positivo.
+- Pedir más tiempo para tomar la decisión.
+- Dejarle saber a las otras compañías que tengo una oferta.
+- Encontrar el salario exacto que quiero.
+- ¿Qué valor proporciono a la compañía?
+- Siempre iniciar con un valor más alto al que quiero.
+
+## Manejo de múltiples ofertas
+
+1. ¿Hay alguna oferta con la que sienta que no está calificado?
+2. Potencial crecimiento a largo plazo.
+3. ¿Respetarás a las personas que te rodean?
+4. Salario y beneficios.
+5. ¿Está basada la decisión en desesperación?
+
+## Obtener un aumento
+
+- Preguntar por un aumento.
+- Demostrar que soy alguien muy valioso para ellos, no decirlo. Esto se puede hacer con un documento, un email, etc.
