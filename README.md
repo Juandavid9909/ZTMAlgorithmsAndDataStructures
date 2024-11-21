@@ -37,15 +37,15 @@ Enlaces para elementos útiles:
 
 Nos permite validar el tiempo de ejecución usando la cantidad de elementos y la cantidad de operaciones. A continuación una gráfica mostrando qué tan buena es una complejidad Big O.
 
-![Gráfica Big O](https://i.ibb.co/CMHHnKC/image.png)
+![Gráfica Big O](https://github.com/user-attachments/assets/69a24cfa-6193-47f3-90be-468383212532)
 
 También una tabla con toda la información de la complejidad de las operaciones para cada estructura de dato:
 
-![Tabla estructuras de datos](https://i.ibb.co/C6t3zn4/image.png)
+![Tabla estructuras de datos](https://github.com/user-attachments/assets/af30c1b8-2b25-43a6-8878-e15214bb1bd7)
 
 Y por último la complejidad de algunos algoritmos que ordenan los datos de los arreglos:
 
-![Tabla algoritmos arreglos](https://i.ibb.co/4J72hRj/image.png)
+![Tabla algoritmos arreglos](https://github.com/user-attachments/assets/983983d7-926b-4e93-8656-90b280e003b4)
 
 ## Reglas Big O
 
@@ -68,7 +68,7 @@ Con todas estas recomendaciones y tips podemos decir que para mejorar nuestro c�
 
 ### $O(1)$ 
 Bloques de código sin ciclos.
-```
+```javascript
 const boxes = [0, 1, 2, 3, 4, 5];
 
 function logFirstTwoBoxes(boxes) {
@@ -81,7 +81,7 @@ logFirstTwoBoxes(boxes);
 
 ### $O(log_n)$
 Usualmente algoritmos de búsqueda tienen $log_n$ si estos están ordenados (Binary search) (no aplica para Hash Maps).
-```
+```javascript
 // Level 0: 2^0 = 1;
 // Level 1: 2^1 = 2;
 // Level 2: 2^2 = 4;
@@ -92,7 +92,7 @@ Usualmente algoritmos de búsqueda tienen $log_n$ si estos están ordenados (Bin
 
 ### $O(n)$
 Bloques de código con ciclos de un nivel.
-```
+```javascript
 const nemo = ["nemo"];
 const everyone = ["dory", "bruce", "marlin", "nemo", "gill", "bloat", "nigel", "squirt", "darla", "hank"];
 const large = new Array(100000).fill("nemo");
@@ -113,7 +113,7 @@ Suelen ser algoritmos con operaciones de ordenamiento.
 
 ### $O(n^2)$
 Cada elemento en una colección necesita ser comparado con cada uno de los restantes, por ende se necesitan 2 ciclos.
-```
+```javascript
 const boxes = ["a", "b", "c", "d", "e"];
 
 function logAllPairsOfArray(array) {
@@ -132,7 +132,7 @@ Algoritmos recursivos que resuelven un problema de tamaño $n$.
 
 ### $O(n!)$
 Se agrega un ciclo para cada elemento en $n$.
-```
+```javascript
 function breakMyBrowser(n) {
 	for(let i = 0; i < n; i++) {
 		breakMyBrowser(n - 1);
@@ -164,7 +164,7 @@ Las cosas que incrementan nuestro **space complexity** son:
 - Asignaciones.
 
 Y a continuación un ejemplo de código donde el space complexity de nuestro código es $O(1)$ ya que la única asignación que se realiza es en el `for` para la variable $i$ y el `i++` no se tiene en cuenta ya que a pesar de alterar la variable sigue siendo el mismo espacio en memoria asignado desde un principio:
-```
+```javascript
 function booooo(n) {
 	for(let i = 0; i < n.length; i++) {
 		console.log("boooooo!");
@@ -175,7 +175,7 @@ booooo([1, 2, 3, 4, 5]);
 ```
 
 Y para el ejemplo 2 un space complexity de $O(n)$ por la asignación de variable en cada iteración para la variable `hiArray` ya que estamos requiriendo más espacios en memoria para cada elemento $i$ que iteramos:
-```
+```javascript
 function arrayOfHiNTimes(n) {
 	let hiArray = [];
 
@@ -266,7 +266,7 @@ arrayOfHiNTimes(6);
 |--|--|--|--|--|
 | Arreglo | $O(1)$ | $O(1)$ | $O(n)$ | $O(n)$ |
 
-```
+```javascript
 const strings = ["a", "b", "c", "d"];
 // 4*4 = 16 bytes de almacenamiento
 // Recordar que una variable ("a" por ejemplo) requiere 32 bits de almacenamiento, es decir 4 bytes
@@ -292,7 +292,7 @@ strings.splice(2, 0, "alien"); // O(n/2) => O(n)
 - **Arreglos dinámicos:** Nos permiten copiar y rehacer un arreglo en una nueva ubicación de memoria si necesitamos más espacio, esto quiere decir que el tamaño es flexible.
 
 **Ejemplo:**
-```
+```javascript
 // Arreglos estáticos (C++)
 int a[20];
 int b[5] = {1, 2, 3, 4, 5}
@@ -306,7 +306,7 @@ Aunque a grandes rasgos los arreglos dinámicos parecen mejores debemos tener en
 
 **Nota:** Siempre en las entrevistas técnicas ver los `strings` como `arreglos`.
 
-![Imagen arreglos](https://media.geeksforgeeks.org/wp-content/uploads/C-Arrays.jpg)
+![Imagen arreglos](https://github.com/user-attachments/assets/f28d7317-65b1-4d5d-94e7-d1a03728d6fa)
 
 #### Ventajas
 - Rápidas búsquedas.
@@ -329,7 +329,7 @@ Las tablas Hash o más conocidas como Hash tables están en casi todos los lengu
 
 Las funciones Hash reciben un string y la función genera un patrón aleatorio.
 
-```
+```javascript
 let user = {
 	age: 54,
 	name: "Kylie",
@@ -351,7 +351,7 @@ const a = new Map();
 const b = new Set();
 ```
 
-![Imagen Hash Tables](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Hash_table_5_0_1_1_1_1_1_LL.svg/450px-Hash_table_5_0_1_1_1_1_1_LL.svg.png)
+![Imagen Hash Tables](https://github.com/user-attachments/assets/79deeec6-0a27-454e-a803-d1570e5837fb)
 
 #### Ventajas (buena resolución de colisión necesaria)
 - Búsquedas rápidas.
@@ -377,7 +377,7 @@ La ventana de las Listas Enlazadas sobre Tablas Hash es que de cierta forma hay 
 
 La gran diferencia entre Listas Enlazadas y Listas Doblemente Enlazadas es que las sencillas permiten hacer una rápida inserción cuando se hace al inicio o al final ya que estas operaciones son $O(1)$, y con las dobles es que al tener una relación bidireccional podemos hacer recorridos en ambos sentidos, y esto nos permite poner al reverso la lista sin problema.
 
-```
+```javascript
 const basket = ["apples", "grapes", "pears"];
 
 // Linked List: apples --> grapes --> pears
@@ -395,7 +395,7 @@ delete obj1;
 console.log("2", obj2); // No se borra
 ```
 
-![Imagen Linked Lists](https://res.cloudinary.com/practicaldev/image/fetch/s--QTk9XbRm--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/kvnpce96zqdxu73hp6oe.png)
+![Imagen Linked Lists](https://github.com/user-attachments/assets/837b9aa8-d51c-407b-97b4-8b06273df536)
 
 #### Ventajas
 - Rápidas inserciones (si tenemos referencias directas como inicio y final).
@@ -416,7 +416,7 @@ console.log("2", obj2); // No se borra
 
 Las pilas o stacks es un tipo de estructura de data que son como platos, tenemos una pieza de información y luego ponemos otra encima, y así sucesivamente, y al tener toda esta información apilada sólo puedes ir extrayéndola desde la última a la primera, así es LIFO (Last In First Out). Son muy útiles cuando por ejemplo necesitas visualizar el último elemento agregado a la pila, otro ejemplo es el historial de tu navegador, y para regresar usas una pila y vas eliminando el primero cada vez que das atrás.
 
-![Imagen Stacks](https://cdn.programiz.com/sites/tutorial2program/files/stack.png)
+![Imagen Stacks](https://github.com/user-attachments/assets/64d040ea-9762-42d0-9201-9c9d5cab0f6a)
 
 #### Ventajas
 - Rápidas operaciones.
@@ -434,7 +434,7 @@ Las pilas o stacks es un tipo de estructura de data que son como platos, tenemos
 
 Las colas o pilas son como una fila, y la primera persona en llegar entra, ese es su funcionamiento, así es FIFO (First In First Out). Otro ejemplo es Uber cuando una persona solicita un servicio de transporte y luego otra, le va a dar prioridad con la primera y una vez asigna el transporte para esta seguirá con la segunda y así sucesivamente. No es recomendable usar arreglos para crear colas, ya que al eliminar el primer elemento requerimos de actualizar los índices de todos los demás elementos.
 
-![Imagen Queues](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221213113312/Queue-Data-Structures.png)
+![Imagen Queues](https://github.com/user-attachments/assets/c13b903f-11c0-493b-be6c-24e1341b935e)
 
 #### Ventajas
 - Rápidas operaciones.
@@ -449,7 +449,7 @@ Las colas o pilas son como una fila, y la primera persona en llegar entra, ese e
 
 Los árboles son nodos que pueden tener n cantidad de hijos, tienen un nodo raíz y cada uno de los hijos desciende de este nodo, la relación entre padre e hijo es unidireccional y hay nodos hojas que son aquellos que no tienen hijos. Un ejemplo de implementación de árboles es el HTML siendo la etiqueta `html` la raíz de todo.
 
-![Imagen Trees](https://algorithmtutor.com/images/tree.png)
+![Imagen Trees](https://github.com/user-attachments/assets/e6a3ed75-e7fc-43b4-927b-b846dfe198e6)
 
 ### Binary Tree
 
@@ -468,7 +468,7 @@ Su máxima desventaja es que pueden quedar muy disparejos los niveles de los nod
 | Binary Search Tree | $O(log_n)$ | $O(log_n)$ | $O(log_n)$ |
 | Binary Search Tree muy cargado de un lado | $O(n)$ | $O(n)$ | $O(n)$ |
 
-![Imagen Binary Search Trees](https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Binary_search_tree.svg/1200px-Binary_search_tree.svg.png)
+![Imagen Binary Search Trees](https://github.com/user-attachments/assets/b7d850fc-c2eb-4834-a9ee-1a4ff9c2e425)
 
 #### Ventajas
 - Mejor que $O(n)$.
@@ -517,7 +517,7 @@ Y al insertar el elemento 80 haría este proceso:
   5          71  80
 ```
 
-![Imagen AVL Trees](https://www.programiz.com/sites/tutorial2program/files/avl-tree_update-bf.png)
+![Imagen AVL Trees](https://github.com/user-attachments/assets/6697bdfd-d681-408a-b3ba-d3720391da45)
 
 #### Red Black Trees
 Para estos árboles se indica un color para cada nodo, la raíz siempre debe ser de color negro y van a ir cambiando los colores por cada nivel.
@@ -560,7 +560,7 @@ Y queremos agregar el nodo 11, se hará el siguiente proceso
 9(r) 11(r)
 ```
 
-![Imagen Red Black Trees](https://cs.lmu.edu/~ray/images/redblacktree.png)
+![Imagen Red Black Trees](https://github.com/user-attachments/assets/aa684f4a-a165-4bd2-85c8-8c49f8540109)
 
 #### AVL trees vs Red Black Trees
 Tanto los árboles rojo-negro como los árboles AVL son los árboles de búsqueda binarios equilibrados más utilizados y admiten la inserción, eliminación y búsqueda en tiempo $O(log_n)$ garantizado. Sin embargo, hay los siguientes puntos de comparación entre los dos:
@@ -595,7 +595,7 @@ Tener en cuenta que Memory Heap no es lo mismo que Binary Heap.
 ##### Priority Queue
 Es el mismo comportamiento de las colas pero existe la prioridad, es decir que pueden llegar valores de últimos con mayor prioridad que serán operados primero, pero esto se construye con ayuda de árboles (Binary Heaps) por lo que el orden no será por los valores, será por su prioridad.
 
-![Imagen Binary Heaps](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20221220165711/MinHeapAndMaxHeap1.png)
+![Imagen Binary Heaps](https://github.com/user-attachments/assets/47f1e46d-33d6-4fd6-b2f0-b33aa1b7d718)
 
 #### Ventajas
 - Mejor que $O(n)$.
@@ -612,26 +612,26 @@ Es un árbol especializado en búsqueda, sobretodo con textos, y en algunos caso
 
 Los Tries nos permiten saber si una palabra, o parte de una palabra existe en un string. La raíz en sí no tiene valor, y de ella se desprenden las letras, y cada letras tendrá las demás letras asociadas a la letra raíz de la palabra que estamos insertando. Con esta estructura de datos podemos hacer sugerencias ha que al buscar las palabras que está colocando el usuario podemos ir conectando con nuestros datos. Su complejidad de tiempo es $O(n)$ donde $n$ es la longitud de la palabra.
 
-![Imagen Tries](https://theoryofprogramming.files.wordpress.com/2015/01/trie12.jpg)
+![Imagen Tries](https://github.com/user-attachments/assets/033d41c3-eade-430a-ba12-1de3e6d1dceb)
 
 
 ## Graphs
 
 Los Grafos son unas de las estructuras de datos más usadas en ciencias de la computación. Es simplemente un conjunto de valores que están relacionados en pares, es como una pequeña red con distintos nodos/vértices y estos están conectados mediante sus aristas. Podemos usar los Grafos para representar redes en la World Wide Web, árboles genealógicos, o incluso para representar caminos, como hace Google Maps indicando las conexiones entre vértices para llegar de un punto A a un punto B.
 
-![Imagen Graphs](https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/6n-graf.svg/1200px-6n-graf.svg.png)
+![Imagen Graphs](https://github.com/user-attachments/assets/c4b97c00-1bb9-4ab7-86d3-2c53343db10b)
 
 Hay varios tipos de Grafos, los dirigidos y no dirigidos, los dirigidos indican en qué sentido va la conexión, los no dirigidos simplemente están conectados sin indicar si estos van en sentido de un nodo a otro.
 
-![Imagen Directed and Undirected Graphs](http://4.bp.blogspot.com/-gjVEx8DXip0/UnPt3mA039I/AAAAAAAAAFs/2mek_diAbi8/s1600/10.png)
+![Imagen Directed and Undirected Graphs](https://github.com/user-attachments/assets/a59b8566-d2e1-42f2-9bb4-76c61210ba84)
 
 También están los Weighted y Unweighted Graphs, que son aquellos que tienen o no tienen un valor de costo en las aristas que conectan los distintos nodos.
 
-![Imagen Weighted and Unweighted Graphs](https://global-uploads.webflow.com/5d0dc87aac109e1ffdbe379c/60e19743a601cb5dff42ce85_jd.png)
+![Imagen Weighted and Unweighted Graphs](https://github.com/user-attachments/assets/4f6dbc6f-8762-4316-bb34-c752617d4f2b)
 
 Y también están los Grafos cíclicos y acíclicos, estos son los que tienen o no conexiones que permiten ir en círculos alrededor de los nodos como se representa en la imagen.
 
-![Imagen Cyclic and Acyclic Graphs](https://www.codingeek.com/wp-content/uploads/2016/11/cyclic.png)
+![Imagen Cyclic and Acyclic Graphs](https://github.com/user-attachments/assets/fe73e45f-554d-4df9-b5ca-89763685bfe1)
 
 ### ¿Cómo representar Grafos en código?
 
@@ -643,7 +643,7 @@ Supongamos que queremos construir el siguiente Grafo:
 ```
 
 Podríamos hacer lo siguiente en JavaScript:
-```
+```javascript
 // Edge List
 const graph = [[0, 2], [2, 3], [2, 1], [1, 3]];
 
@@ -717,7 +717,7 @@ Cada vez que usemos un árbol o convirtamos algo en un árbol, considerar recurs
 
 Los problemas de ordenamiento y búsqueda son de los más importantes en el mundo de la programación, y hay numerosos algoritmos que cumplen con estas funciones. Algunos son más eficientes que otros dependiendo del tamaño de entrada, y aunque los lenguajes de programación tienen su propia función `sort()` estas no son las más óptimas. A continuación un ejemplo de por qué la función `.sort()` de JavaScript no siempre es la más óptima:
 
-```
+```javascript
 const letters = ["a", "d", "z", "e", "r", "b"];
 const basket = [2, 65, 34, 2, 1, 7, 8];
 const spanish = ["único", "árbol", "cosas", "fútbol"];
@@ -745,11 +745,11 @@ Básicamente verifica posición por posición 2 elementos y los va cambiando si 
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Bubble Sort](http://www.computersciencebytes.com/wp-content/uploads/2016/10/bubble_sort.png)
+![Imagen Bubble Sort](https://github.com/user-attachments/assets/6128191f-b6e3-4904-b8f5-8d872cfad6de)
 
 En general nunca se usa debido, sólo para fines educativos, pero en proyectos reales es mejor ver otras opciones.
 
-![Imagen Bubble Sort](https://i.stack.imgur.com/XNbE0.gif)
+![Imagen Bubble Sort](https://github.com/user-attachments/assets/6ebed910-1732-4007-af06-4159f156f7d3)
 
 ### Selection Sort
 
@@ -761,11 +761,11 @@ Es muy parecido al Bubble Sort, con la diferencia de que aquí no se van cambian
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Selection Sort](https://he-s3.s3.amazonaws.com/media/uploads/2888f5b.png)
+![Imagen Selection Sort](https://github.com/user-attachments/assets/4bfbc889-0e16-46b4-b606-b4858d608fbd)
 
 Lo mismo que Bubble Sort, no es usado, sólo para fines educativos.
 
-![Imagen Selection Sort](https://cdn.devdojo.com/images/september2021/selectionsortgif_madebyme.gif)
+![Imagen Selection Sort](https://github.com/user-attachments/assets/0a42806a-d41a-4a64-9c3e-e98019217589)
 
 ### Insertion Sort
 
@@ -777,11 +777,11 @@ No es el más eficiente pero hay casos en los que es bastante rápido, este algo
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Insertion Sort](https://static.packt-cdn.com/products/9781785888731/graphics/image_13_008.jpg)
+![Imagen Insertion Sort](https://github.com/user-attachments/assets/14dea18d-f81d-4420-a24e-9ef1d91432cc)
 
 Se recomienda usar Insertion Sort cuando el tamaño de la entrada es pequeño o cuando estamos seguros de que el arreglo está (o casi) ordenado.
 
-![Imagen Insertion Sort](https://upload.wikimedia.org/wikipedia/commons/9/9c/Insertion-sort-example.gif)
+![Imagen Insertion Sort](https://github.com/user-attachments/assets/6d2de057-aa2b-4f03-9f96-fd9154a4f43d)
 
 ### Merge Sort
 
@@ -793,11 +793,11 @@ Está basado en dividir y conquistar, toma una entrada muy grande y la divide en
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Merge Sort](https://www.programiz.com/sites/tutorial2program/files/merge-sort-example_0.png)
+![Imagen Merge Sort](https://github.com/user-attachments/assets/78354f27-dcee-4a0f-98ca-5c286d673ae3)
 
 Es muy bueno porque usa dividir y conquistar, además de su complejidad de tiempo $O(n*log_n)$. Es muy rápido y aunque sea el peor caso siempre va a ser la misma complejidad de tiempo por lo que cuando es incierto saber o sabemos que el orden de la entrada va a ser muy desordenado es muy recomendable usarlo. Sin embargo, por su complejidad espacial vamos a requerir de muchos recursos, ya que en el peor de los casos será $O(n)$.
 
-![Imagen Merge Sort](https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif?20151222172210)
+![Imagen Merge Sort](https://github.com/user-attachments/assets/ff8caec2-f8d9-4732-ab30-da7bb6c4919c)
 
 ### Quick Sort
 
@@ -809,11 +809,11 @@ Al igual que Merge Sort está basado en dividir y conquistar, la diferencia es q
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Quick Sort](https://favtutor.com/resources/images/uploads/mceu_46432632011643441346270.png)
+![Imagen Quick Sort](https://github.com/user-attachments/assets/30412ec8-d14c-4a73-adf9-e2e4b2e1810a)
 
 Es mejor que Merge Sort en el caso promedio y en complejidad espacial, su desventaja es el peor caso, por lo que si no asignamos correctamente el pivote para realizar las operaciones es muy posible que nuestro proceso de ordenamiento sea muy muy lento.
 
-![Imagen Quick Sort](https://upload.wikimedia.org/wikipedia/commons/9/9c/Quicksort-example.gif)
+![Imagen Quick Sort](https://github.com/user-attachments/assets/4bfc6b42-3e59-4609-9d28-6fa534551526)
 
 A pesar de que el mejor resultado que obtenemos por ordenamiento con cada uno de estos en el peor de los casos es $O(n*log_n)$ hay 2 opciones para mejorar esta complejidad de tiempo, basándose en el ordenamiento sin hacer comparaciones, dichos algoritmos son Counting Sort y Radix Sort, pero cabe resaltar que estos algoritmos sólo funcionan con valores numéricos, específicamente enteros.
 
@@ -827,7 +827,7 @@ Este algoritmo consiste en almacenar todos los elementos del vector a ordenar en
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Merge Sort](https://upload.wikimedia.org/wikipedia/commons/f/fe/Heap_sort_example.gif)
+![Imagen Merge Sort](https://github.com/user-attachments/assets/c0d8f92a-ed31-497f-8925-171ebc57c6a6)
 
 ### Radix Sort
 
@@ -872,7 +872,7 @@ Lista ordenada:
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Quick Sort](https://ds055uzetaobb.cloudfront.net/brioche/uploads/IEZs8xJML3-radixsort_ed.png?width=1200)
+![Imagen Quick Sort](https://github.com/user-attachments/assets/9dc375d1-1711-468a-8069-43fe84799c0f)
 
 ### Counting Sort
 
@@ -924,7 +924,7 @@ Para ordenarla con este algoritmo, seguimos estos pasos:
 
 Y también una imagen para entender el proceso paso a paso:
 
-![Imagen Quick Sort](https://d18l82el6cdm1i.cloudfront.net/uploads/hrUDdYC7OH-countingsort.gif)
+![Imagen Quick Sort](https://github.com/user-attachments/assets/1a12f70b-9a52-4741-90c9-12a5e19ad140)
 
 
 ## Búsqueda
@@ -935,13 +935,13 @@ La búsqueda es algo que realizamos mucho en las computadoras. Buscamos por arch
 
 Búsqueda Lineal es un método para encontrar un valor en un conjunto de datos verificando todos los elementos en el peor caso, por lo que su complejidad de tiempo es $O(n)$.
 
-![Imagen Linear Search](https://i.pinimg.com/originals/5a/9a/42/5a9a4231aa995d2bec0781c6972f6032.gif)
+![Imagen Linear Search](https://github.com/user-attachments/assets/090c8532-b3f8-436a-86c7-b6229d254209)
 
 ### Búsqueda Binaria
 
 Búsqueda Binaria nos permite buscar un elemento en un arreglo ordenado, es necesario que esté ordenado para garantizar el correcto funcionamiento del algoritmo. Consiste en ir buscando por mitades (dividir y conquistar) hasta encontrar el elemento, lo que permite tener una complejidad de tiempo de $O(log_n)$. El arreglo al final se convierte en un árbol de búsqueda binaria.
 
-![Imagen Binary Search](https://blog.penjee.com/wp-content/uploads/2015/04/binary-and-linear-search-animations.gif)
+![Imagen Binary Search](https://github.com/user-attachments/assets/408620ae-0337-4d53-91a5-b24d0e976eaa)
 
 ## Tree y Graph Traversal
 
@@ -975,7 +975,7 @@ DFS puede ser implementado de 3 formas, estas son `PreOrder, InOrder, PostOrder`
 
 A continuación una imagen donde se puede ver cómo funcionan ambos:
 
-![Imagen BFS y DFS](https://iq.opengenus.org/content/images/2020/05/dfs-vs-bfs.gif)
+![Imagen BFS y DFS](https://github.com/user-attachments/assets/12d3e00b-3f5e-47ef-91b8-f8ce2b6bacf2)
 
 ## Camino más corto
 
@@ -985,11 +985,11 @@ Estos 2 algoritmos nos permiten encontrar el camino de un grafo entre 2 nodos cu
 
 A continuación una representación del algoritmo `Dijkstra`:
 
-![Imagen Dijkstra](https://i.makeagif.com/media/4-06-2019/BlbFEM.gif)
+![Imagen Dijkstra](https://github.com/user-attachments/assets/e69a6e9b-b611-4a52-9a7c-5726e71676ad)
 
 Y una imagen del algoritmo `Bellman-Ford`:
 
-![Imagen Bellman-Ford](https://upload.wikimedia.org/wikipedia/commons/7/77/Bellman%E2%80%93Ford_algorithm_example.gif)
+![Imagen Bellman-Ford](https://github.com/user-attachments/assets/3b7e3967-3c3d-4a30-a6bf-e049f134888d)
 
 El algoritmo de `Bellman-Ford` es más efectivo para encontrar el camino corto que el algoritmo `Dijkstra`, ya que este puede tener en cuenta aristas con costo negativo, mientras que el último algoritmo no está diseñado para tener en cuenta estos casos. Sin embargo, el algoritmo `Bellman-Ford` toma más tiempo ejecutándose si hablamos de complejidad, y no es el algoritmo más eficiente, su complejidad de tiempo en el peor caso es de $O(n^2)$, mientras que el algoritmo `Dijkstra` es un poco más rápido y eficiente que este.
 
@@ -1012,7 +1012,7 @@ Para entender qué es Memoization es importante tener claro lo que significa Cac
 
 Un claro ejemplo es cuando programamos una función recursiva que devuelva la secuencia de Fibonacci, ya que al ejecutar el fibonacci de 5 se calculará múltiples veces el fibonacci de 2 y 3, con Memoization podemos guardar esta información para que nuestro algoritmo no tenga que hacer el cálculo múltiples veces, sino que lo haga una vez y guarde esta información para poder seguir accediendo a esta sin necesidad de calcular nuevamente los valores.
 
-![Imagen árbol fibonacci](https://i.stack.imgur.com/2dxLl.png)
+![Imagen árbol fibonacci](https://github.com/user-attachments/assets/e3d0c58e-ef53-490a-8131-231fcb5c825b)
 
 En conclusión la programación dinámica es como una combinación de dividir y conquistar y Memoization.
 
